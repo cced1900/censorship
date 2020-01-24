@@ -15,7 +15,7 @@ conf_file="/etc/ocserv"
 conf="/etc/ocserv/ocserv.conf"
 passwd_file="/etc/ocserv/ocpasswd"
 log_file="/tmp/ocserv.log"
-ocserv_ver="0.12.6"
+ocserv_ver="0.11.8"
 PID_FILE="/var/run/ocserv.pid"
 
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
@@ -72,7 +72,7 @@ Download_ocserv(){
 	mkdir "ocserv" && cd "ocserv"
 	wget "https://gitlab.com/openconnect/ocserv/-/archive/master/ocserv-master.tar.gz"
 	[[ ! -s "ocserv-master.tar.gz" ]] && echo -e "${Error} ocserv 源码文件下载失败 !" && rm -rf "ocserv/" && rm -rf "ocserv-master.tar.gz" && exit 1
-	tar -zxvf ocserv-master.tar.gz && cd ocserv-master
+	tar -zxvf ocserv-master.tar.gz && cd ocserv-0.11.8
 	./configure
 	make
 	make install

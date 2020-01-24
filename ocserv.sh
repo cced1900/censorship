@@ -70,9 +70,9 @@ Get_ip(){
 }
 Download_ocserv(){
 	mkdir "ocserv" && cd "ocserv"
-	wget "https://gitlab.com/openconnect/ocserv/-/archive/master/ocserv-master.tar.gz"
-	[[ ! -s "ocserv-master.tar.gz" ]] && echo -e "${Error} ocserv 源码文件下载失败 !" && rm -rf "ocserv/" && rm -rf "ocserv-master.tar.gz" && exit 1
-	tar -zxvf ocserv-master.tar.gz && cd ocserv-0.11.8
+	wget -c "https://gitlab.com/openconnect/ocserv/-/archive/master/ocserv-master.tar.gz" -O ocserv-0.11.8.tar.gz
+	[[ ! -s "ocserv-0.11.8.tar.gz" ]] && echo -e "${Error} ocserv 源码文件下载失败 !" && rm -rf "ocserv/" && rm -rf "ocserv-0.11.8.tar.gz" && exit 1
+	tar -zxvf ocserv-0.11.8.tar.gz && cd ocserv-0.11.8
 	./configure
 	make
 	make install

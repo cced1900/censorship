@@ -70,7 +70,7 @@ Get_ip(){
 }
 Download_ocserv(){
 	mkdir "ocserv" && cd "ocserv"
-	wget -c "https://gitlab.com/openconnect/ocserv/-/archive/master/ocserv-master.tar.gz" -O ocserv-0.11.8.tar.gz
+	wget "https://github.com/fourdim/censorship/releases/download/0.11.8/ocserv-0.11.8.tar.gz" 
 	[[ ! -s "ocserv-0.11.8.tar.gz" ]] && echo -e "${Error} ocserv 源码文件下载失败 !" && rm -rf "ocserv/" && rm -rf "ocserv-0.11.8.tar.gz" && exit 1
 	tar -zxvf ocserv-0.11.8.tar.gz && cd ocserv-0.11.8
 	./configure
